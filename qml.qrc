@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/components/AppIcon.qml</file>
+        <file>qml/views/HomeView.qml</file>
+        <file>qml/views/SettingsView.qml</file>
+        <file>assets/fonts/fontawesome.otf</file>
+        <file>qml/views/MenuDrawer.qml</file>
+        <file>qml/views/LoginView.qml</file>
+        <file>qml/views/SignUpView.qml</file>
+        <file>qml/views/SplashView.qml</file>
+        <file>qml/components/AppText.qml</file>
+        <file>assets/fonts/Rustico-Regular.otf</file>
+        <file>qml/components/CustomAppTextInput.qml</file>
+        <file>assets/images/pexels-photo-1681010.jpeg</file>
+        <file>qml/components/MenuItem.qml</file>
+        <file>qml/views/BraceletView.qml</file>
+        <file>qml/views/ProfileView.qml</file>
+    </qresource>
+</RCC>
