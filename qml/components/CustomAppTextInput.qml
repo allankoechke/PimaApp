@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.3
 
 TextField
 {
+    id: root
     height: 30
     Layout.fillWidth: true
     Layout.topMargin: 10

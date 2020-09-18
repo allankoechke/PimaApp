@@ -7,9 +7,12 @@ import "./views"
 Window {
     id: mainApp
     visible: true
-    width: 360 // 320
-    height: 640 // 480
+    width: 320
+    height: 480
     title: qsTr("Fitness App")
+
+    Component.onCompleted: mainApp.showMaximized()
+
 
     property alias fontAwesomeFontLoader: fontAwesomeFontLoader
     property alias rusticoRegularFontLoader: rusticoRegularFontLoader

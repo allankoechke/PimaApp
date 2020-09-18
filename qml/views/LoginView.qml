@@ -64,10 +64,10 @@ Rectangle {
 
         AppText
         {
-            text: qsTr("PIMA")
+            text: qsTr("SafeWrist")
             size: 30
             bold: true
-            family: rusticoRegularFontLoader.name
+            //family: rusticoRegularFontLoader.name
 
             Layout.alignment: Qt.AlignHCenter
         }

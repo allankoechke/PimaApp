@@ -35,51 +35,54 @@ Rectangle {
         anchors.leftMargin: -35
     }
 
-    RowLayout
-    {
-        anchors.top: parent.top
-        anchors.topMargin: 20
-        anchors.horizontalCenter: parent.horizontalCenter
-
-        spacing: 10
-
-        Rectangle
-        {
-            width: 70
-            height: 70
-            radius: height/2
-            color: themeBlueLighter
-
-            Layout.alignment: Qt.AlignVCenter
-
-            AppIcon
-            {
-                size: 50
-                color: themeFore
-                icon: "\uf21e"
-
-                anchors.centerIn: parent
-            }
-        }
-
-        AppText
-        {
-            text: qsTr("PIMA")
-            size: 30
-            bold: true
-            family: rusticoRegularFontLoader.name
-
-            Layout.alignment: Qt.AlignVCenter
-        }
-    }
-
     ColumnLayout
     {
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 50
+        anchors.verticalCenter: parent.verticalCenter
         width: root.width*0.7
-        spacing: 20
+        spacing: 10
+
+        Item
+        {
+            Layout.fillWidth: true
+            Layout.preferredHeight: 60
+
+            RowLayout
+            {
+                anchors.centerIn: parent
+
+                spacing: 10
+
+                Rectangle
+                {
+                    width: 55
+                    height: 55
+                    radius: height/2
+                    color: themeBlueLighter
+
+                    Layout.alignment: Qt.AlignVCenter
+
+                    AppIcon
+                    {
+                        size: 38
+                        color: themeFore
+                        icon: "\uf21e"
+
+                        anchors.centerIn: parent
+                    }
+                }
+
+                AppText
+                {
+                    text: qsTr("SafeWrist")
+                    size: 30
+                    bold: true
+                    //family: rusticoRegularFontLoader.name
+
+                    Layout.alignment: Qt.AlignVCenter
+                }
+            }
+        }
 
         TextField
         {
@@ -127,24 +130,13 @@ Rectangle {
         CustomAppTextInput
         {
             placeholderText: qsTr("Password")
-            // isPassword: TextField.Password
+            echoMode: TextField.Password
         }
 
         CustomAppTextInput
         {
             placeholderText: qsTr("Confirm Password")
-            // isPassword: TextField.Password
-        }
-
-
-        AppText
-        {
-            text: qsTr("Forgot Password?")
-            size: 13
-            bold: true
-            color: themeLight
-
-            Layout.alignment: Qt.AlignRight
+            echoMode: TextField.Password
         }
 
         Rectangle

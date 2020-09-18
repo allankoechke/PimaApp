@@ -9,12 +9,15 @@ Rectangle {
 
     Layout.fillWidth: true
     Layout.fillHeight: true
+    width: mainApp.width
+    height: mainApp.height
 
     color: themeFore
     clip: true
 
     Rectangle
     {
+        id: topbar
         color: themeBlue
         width: root.width
         height: 70
@@ -94,11 +97,113 @@ Rectangle {
         }
     }
 
-    //Item{
-        //Layout.fillWidth: true
-        //Layout.fillHeight: true
-    //}
+    Item{
+        width: root.width
+        anchors.top: topbar.bottom
+        anchors.topMargin: 20
+        anchors.bottomMargin: 20
+        anchors.bottom: parent.bottom
 
+        ColumnLayout
+        {
+            anchors.fill: parent
+            spacing: 10
 
+            Rectangle
+            {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 180
+                Layout.leftMargin: 20
+                Layout.rightMargin: 20
+                color: themeFore
+                border.color: "silver"
+                border.width: 1
 
+                RowLayout
+                {
+                    anchors.fill: parent
+                    anchors.margins: 20
+                    spacing: 5
+
+                    AppIcon
+                    {
+                        color: "#555555"
+                        size: 60
+                        icon: "\uf63e"
+
+                        Layout.alignment: Qt.AlignVCenter|Qt.AlignLeft
+                    }
+
+                    Rectangle
+                    {
+                        Layout.fillHeight: true
+                        Layout.preferredWidth: 1
+                        Layout.leftMargin: 20
+                        color: "silver"
+                    }
+
+                    Item{
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+
+                        ColumnLayout
+                        {
+                            width: parent.width
+                            anchors.left: parent.left
+                            anchors.verticalCenter: parent.verticalCenter
+                            spacing: 10
+
+                            AppText
+                            {
+                                color: "#2e2e2e"
+                                size: 14
+                                text: qsTr("Device Id: HSVJ4654FCD")
+                            }
+
+                            AppText
+                            {
+                                color: "#535353"
+                                size: 14
+                                text: qsTr("Connected: YES")
+                            }
+
+                            AppText
+                            {
+                                color: "#535353"
+                                size: 14
+                                text: qsTr("Signal Strength: GOOD")
+                            }
+
+                            AppText
+                            {
+                                color: "#535353"
+                                size: 13
+                                text: qsTr("Battery: 37%")
+                            }
+
+                            AppText
+                            {
+                                color: "#535353"
+                                size: 12
+                                text: qsTr("Temperature: 24 c")
+                            }
+
+                            AppText
+                            {
+                                color: "#535353"
+                                size: 12
+                                text: qsTr("Last Synced: 3m ago")
+                            }
+                        }
+                    }
+                }
+            }
+
+            ListView
+            {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+            }
+        }
+    }
 }

@@ -16,5 +16,7 @@
         <file>qml/components/MenuItem.qml</file>
         <file>qml/views/BraceletView.qml</file>
         <file>qml/views/ProfileView.qml</file>
+        <file>qml/components/HomeWidget.qml</file>
+        <file>qml/components/ProfileWidget.qml</file>
     </qresource>
 </RCC>

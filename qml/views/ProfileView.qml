@@ -9,12 +9,18 @@ Rectangle {
 
     Layout.fillWidth: true
     Layout.fillHeight: true
+    width: mainApp.width
+    height: mainApp.height
 
     color: themeFore
     clip: true
 
+    property bool isEditing: false
+
+
     Rectangle
     {
+        id: topbar
         color: themeBlue
         width: root.width
         height: 70
@@ -75,7 +81,7 @@ Rectangle {
                 {
                     color: themeFore
                     size: 30
-                    icon: "\uf058"
+                    icon: isEditing? "\uf057":"\uf4ff"
 
                     anchors.centerIn: parent
                 }
@@ -84,21 +90,88 @@ Rectangle {
                 {
                     anchors.fill: parent
                     onClicked: {
-                        // sconsole.log("Clicked")
-                        // menuDrawer.open();
+                        isEditing = !isEditing
                     }
                 }
             } // Tick Button
 
-
         }
     }
 
-    //Item{
-        //Layout.fillWidth: true
-        //Layout.fillHeight: true
-    //}
+    Item{
+        anchors.top: topbar.bottom
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: root.width*0.7
 
+        ColumnLayout
+        {
+            width: parent.width
+            anchors.centerIn: parent
+            spacing: 15
 
+            Item{
+                Layout.fillWidth: true
+                Layout.preferredHeight: 35
 
+                AppIcon
+                {
+                    color: themeBlueLighter
+                    size: 22
+                    icon: "\uf2bd"
+
+                    anchors.left: parent.left
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+            }
+
+            ProfileWidget
+            {
+                label:  qsTr("Firstname")
+                readOnly: !isEditing
+            }
+
+            ProfileWidget
+            {
+                label: qsTr("Lastname")
+                readOnly: !isEditing
+            }
+
+            ProfileWidget
+            {
+                label: qsTr("Email")
+                readOnly: !isEditing
+            }
+
+            ProfileWidget
+            {
+                label: qsTr("Mobile number")
+                readOnly: !isEditing
+            }
+
+            Rectangle
+            {
+                visible: isEditing
+                Layout.fillWidth: true
+                Layout.preferredHeight: 35
+
+                radius: 5
+                color: themeBlue
+
+                AppText
+                {
+                    anchors.centerIn: parent
+                    anchors.topMargin: 20
+                    color: themeLight
+                    size: 15
+                    text: qsTr("Update Details")
+                }
+            }
+
+            Item{
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+            }
+        }
+    }
 }
