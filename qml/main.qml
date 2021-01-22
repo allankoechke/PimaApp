@@ -1,5 +1,5 @@
 import QtQuick 2.12
-import QtQuick.Window 2.0
+import QtQuick.Window 2.2
 import QtQuick.Layouts 1.3
 
 import "./views"
@@ -9,9 +9,10 @@ Window {
     visible: true
     width: 320
     height: 480
+    visibility: "Maximized"
     title: qsTr("Fitness App")
 
-    Component.onCompleted: mainApp.showMaximized()
+    //Component.onCompleted: mainApp.showMaximized()
 
 
     property alias fontAwesomeFontLoader: fontAwesomeFontLoader
